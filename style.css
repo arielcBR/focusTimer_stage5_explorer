@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --bg-app: #FFF;
+
+    --fonts: #323238;
+
+    --bg-card: #E1E1E6;
+    --bg-card-rain: #02799D;
+    --bg-card-fire: #ef0f0f;
+    --bg-card-coffe: #7d4803;
+    --bg-card-forest: #02970a;
+}
+
+body{
+    background-color: var(--bg-app);
+    color: var(--fonts);
+    font-family: 'Roboto', sans-serif;
+    font-size: 126.166px;
+    font-weight: 500;
+    height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 192px;
+    max-width: 820px;
+}
+
+.timer-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 312px;
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 17px;
+}
+
+.controls-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.btn{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+.sounds-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    width: 308px;
+}
+
+.card{
+    cursor: pointer;
+    transition: 0.5s;
+    width: 138px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
