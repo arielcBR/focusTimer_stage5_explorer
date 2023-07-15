@@ -5,8 +5,12 @@ const btnPlay = document.querySelector('#play')
 const btnStop = document.querySelector('#stop')
 const btnAdd = document.querySelector('#add')
 const btnRemove = document.querySelector('#remove')
+const cardForest = document.querySelector('#forest')
+const cardRain = document.querySelector('#rain')
+const cardCoffeeStore = document.querySelector('#coffee')
+const cardFire = document.querySelector('#fire')
 
-let isNotPaused = false;
+let isPaused = true;
 let timerTimeOut;
 let seconds = Number(timerSeconds.textContent)
 let minutes = Number(timerMinutes.textContent)
@@ -32,35 +36,67 @@ function displayTimer(minutes, seconds = 0){
 }
 
 btnPlay.addEventListener('click', () => {
-    if (!isNotPaused) {
+    btnPlay.setAttribute("src", "./images/play_active.svg")
+    btnStop.setAttribute("src", "./images/stop.svg")
+    
+    if (isPaused) {
+        isPaused = false
         countdown()
-        isNotPaused = true
     }
 })
 
 btnStop.addEventListener('click', () => {
-    if (!isNotPaused) {
+    btnPlay.setAttribute("src", "./images/play.svg")
+    btnStop.setAttribute("src", "./images/stop_active.svg")
+
+    if (isPaused) {
         minutes = 10
         seconds = 0
         displayTimer(minutes, seconds)
+        btnStop.setAttribute("src", "./images/stop.svg")
     }
-
     clearTimeout(timerTimeOut)
-    isNotPaused = false
+    isPaused = true
 })
 
 btnAdd.addEventListener('click', () => {
-    if (minutes <= 58)
-        minutes += 1
+    if (minutes <= 54)
+        minutes += 5
     displayTimer(minutes, seconds)
 })
 
 btnRemove.addEventListener('click', () => {
-    if (minutes >= 2)
-        minutes -= 1
+    if (minutes > 5)
+        minutes -= 5
     displayTimer(minutes, seconds)
 })
 
+cardForest.addEventListener('click', () => {
+    cardForest.setAttribute("src", "./images/forest-card_active.svg")
+    cardRain.setAttribute("src", "./images/rainning-card.svg")
+    cardFire.setAttribute("src", "./images/fire-card.svg")
+    cardCoffeeStore.setAttribute("src", "./images/coffee-card.svg")
+})
 
+cardRain.addEventListener('click', () => {
+    cardForest.setAttribute("src", "./images/forest-card.svg")
+    cardRain.setAttribute("src", "./images/rainning-card_active.svg")
+    cardFire.setAttribute("src", "./images/fire-card.svg")
+    cardCoffeeStore.setAttribute("src", "./images/coffee-card.svg")
+})
+
+cardCoffeeStore.addEventListener('click', () => {
+    cardForest.setAttribute("src", "./images/forest-card.svg")
+    cardRain.setAttribute("src", "./images/rainning-card.svg")
+    cardFire.setAttribute("src", "./images/fire-card.svg")
+    cardCoffeeStore.setAttribute("src", "./images/coffee-card_active.svg")
+})
+
+cardFire.addEventListener('click', () => {
+    cardForest.setAttribute("src", "./images/forest-card.svg")
+    cardRain.setAttribute("src", "./images/rainning-card.svg")
+    cardFire.setAttribute("src", "./images/fire-card_active.svg")
+    cardCoffeeStore.setAttribute("src", "./images/coffee-card.svg")
+})
 
 
