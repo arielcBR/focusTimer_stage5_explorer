@@ -1,13 +1,14 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-:root{
+:root {
     --bg-app: #FFF;
 
     --fonts: #323238;
+    --font-stop: #1a1a1d;
 
     --bg-card: #E1E1E6;
     --bg-card-rain: #02799D;
@@ -16,7 +17,7 @@
     --bg-card-forest: #02970a;
 }
 
-body{
+body {
     background-color: var(--bg-app);
     color: var(--fonts);
     font-family: 'Roboto', sans-serif;
@@ -28,7 +29,7 @@ body{
     place-content: center;
 }
 
-main{
+main {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,35 +37,35 @@ main{
     max-width: 820px;
 }
 
-.timer-wrapper{
+.timer-wrapper {
     display: flex;
     flex-direction: column;
     width: 312px;
 }
 
-.timer{
+.timer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 17px;
 }
 
-.controls-wrapper{
+.controls-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 40px;
 }
 
-.btn{
+.btn {
     cursor: pointer;
     transition: 0.5s;
 }
 
-.btn:hover{
-    transform: scale(1.05);
+.btn:hover {
+    transform: scale(1.1);
 }
 
-.sounds-wrapper{
+.sounds-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -72,12 +73,12 @@ main{
     width: 308px;
 }
 
-.card{
+.card {
     cursor: pointer;
     transition: 0.5s;
     width: 138px;
 }
 
-.card:hover{
-    transform: scale(1.05);
+.card:hover {
+    transform: scale(1.1);
 }
